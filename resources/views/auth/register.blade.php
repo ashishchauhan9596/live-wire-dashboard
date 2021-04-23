@@ -1,4 +1,4 @@
-@extends('layouts.liveWireLayout')
+@extends('layouts.authLayout')
 
 @section('content')
     <div class="row justify-content-center custom-auto-height">
@@ -13,16 +13,42 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                                 </div>
-                                <form method="POST" action="{{ route('register') }}">
+                                <form method="POST" action="{{ route('register') }}" class="user">
                                     @csrf
                                     <div class="form-group row">
                                         <div class="col-sm-12">
                                             <input id="name" type="text"
                                                 class="form-control form-control-user @error('name') is-invalid @enderror"
                                                 name="name" value="{{ old('name') }}" placeholder="Name" required
-                                                autocomplete="name" autofocus>
+                                                autocomplete="name" autofocus required>
 
                                             @error('name')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6">
+                                            <input id="middleName" type="text"
+                                                class="form-control form-control-user @error('middleName') is-invalid @enderror"
+                                                name="middleName" value="{{ old('middleName') }}"
+                                                placeholder="Middle Name" autocomplete="middleName">
+
+                                            @error('middleName')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input id="lastName" type="text"
+                                                class="form-control form-control-user @error('lastName') is-invalid @enderror"
+                                                name="lastName" value="{{ old('lastName') }}" placeholder="lastName"
+                                                required autocomplete="lastName">
+
+                                            @error('lastName')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>

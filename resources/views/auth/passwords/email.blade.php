@@ -1,4 +1,4 @@
-@extends('layouts.liveWireLayout')
+@extends('layouts.authLayout')
 
 @section('content')
     <div class="row justify-content-center custom-auto-height">

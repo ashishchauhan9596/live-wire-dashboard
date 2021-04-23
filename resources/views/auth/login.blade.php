@@ -1,4 +1,4 @@
-@extends('layouts.liveWireLayout')
+@extends('layouts.authLayout')
 
 @section('content')
     <!-- Outer Row -->
@@ -16,7 +16,7 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Welcome Admin!</h1>
                                 </div>
-                                <form method="POST" action="{{ route('login') }}">
+                                <form method="POST" action="{{ route('login') }}" class="user">
                                     @csrf
                                     <div class="form-group">
                                         <input id="exampleInputEmail" aria-describedby="emailHelp"
