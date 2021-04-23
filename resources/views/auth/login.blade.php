@@ -1,4 +1,4 @@
-@extends('layouts.authLayout')
+@extends('layouts.liveWireLayout')
 
 @section('content')
     <!-- Outer Row -->

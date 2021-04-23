@@ -23,7 +23,7 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
     {{-- <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet"> --}}
-
+    @livewireStyles
 </head>
 
 <body class="bg-gradient-primary">
@@ -31,7 +31,8 @@
     <div class="container">
         @yield('content')
     </div>
-
+    
+    @livewireScripts
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
